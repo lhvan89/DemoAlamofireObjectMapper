@@ -1,5 +1,5 @@
 //
-//  Forecast.swift
+//  Status.swift
 //  DemoAlamofireObjectMapper
 //
 //  Created by Van Le on 8/15/19.
@@ -9,17 +9,15 @@
 import Foundation
 import ObjectMapper
 
-class Forecast: Mappable {
-    var day: String = ""
-    var temperature: Int = 0
-    var conditions: String = ""
+class ErrorStatus: Mappable {
+    var code: Int = 0
+    var message: String = ""
     
     required init?(map: Map) {
     }
     
     func mapping(map: Map) {
-        day <- map["day"]
-        temperature <- map["temperature"]
-        conditions <- map["conditions"]
+        code <- map["code"]
+        message <- map["message"]
     }
 }

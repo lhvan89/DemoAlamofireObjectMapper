@@ -15,21 +15,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        loadAPI()
+        
+        login(userName: "+portal@itpsolution.net", password: "Thu234567")
     }
     
-    func loadAPI() {
-        let url = "https://raw.githubusercontent.com/tristanhimmelman/AlamofireObjectMapper/d8bb95982be8a11a2308e779bb9a9707ebe42ede/sample_json"
-        Alamofire.request(url).responseObject { (response: DataResponse<WeatherResponse>) in
-            
-            guard let weatherResponse = response.result.value else { return }
-
-            print(weatherResponse.location)
-            
-            let threeDayForecast = weatherResponse.threeDayForecast
-            for forecast in threeDayForecast {
-                print(forecast.day)
-                print(forecast.temperature)
+    func login(userName: String, password: String) {
+        let url = "http://oplusapi.itpsolution.net/api/TokenAuth/Authenticate"
+        let params: Parameters = ["+userNameOrEmailAddress": userName, "password": password]
+        let headers: HTTPHeaders = ["Content-Type": "application/json"]
+        
+        DataManager.sharedInstance.executeRequest(url, method: .post, params: params, headers: headers) { (serverResponse, error, errorMessage) in
+            if error == .success {
+                
+            } else {
+                print(errorMessage)
             }
         }
     }

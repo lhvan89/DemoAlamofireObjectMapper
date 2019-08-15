@@ -1,5 +1,5 @@
 //
-//  WeatherResponse.swift
+//  ServerResponse.swift
 //  DemoAlamofireObjectMapper
 //
 //  Created by Van Le on 8/15/19.
@@ -9,15 +9,17 @@
 import Foundation
 import ObjectMapper
 
-class WeatherResponse: Mappable {
-    var location: String = ""
-    var threeDayForecast: [Forecast] = []
+class ServerResponse: Mappable {
+    var result: AnyObject?
+    var success: Bool = false
+    var error: ErrorStatus?
     
     required init?(map: Map) {
     }
     
     func mapping(map: Map) {
-        location <- map["location"]
-        threeDayForecast <- map["three_day_forecast"]
+        result <- map["result"]
+        success <- map["success"]
+        error <- map["error"]
     }
 }
