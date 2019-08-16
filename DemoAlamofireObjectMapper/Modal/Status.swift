@@ -12,6 +12,7 @@ import ObjectMapper
 class ErrorStatus: Mappable {
     var code: Int = 0
     var message: String = ""
+    var details: String = ""
     
     required init?(map: Map) {
     }
@@ -19,5 +20,6 @@ class ErrorStatus: Mappable {
     func mapping(map: Map) {
         code <- map["code"]
         message <- map["message"]
+        details <- map["details"]
     }
 }

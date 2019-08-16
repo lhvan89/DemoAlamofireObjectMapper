@@ -101,7 +101,6 @@
 				D4357AAC2305608C006E327B /* Extensions */,
 				D4357AA923055EF1006E327B /* Utils */,
 				D4357A9F2305562A006E327B /* Managers */,
-				D4357A9A2305531A006E327B /* Extension */,
 				D4357A9123053D90006E327B /* Modal */,
 				D4357A7F23053BDA006E327B /* AppDelegate.swift */,
 				D4357A8123053BDA006E327B /* ViewController.swift */,
@@ -121,14 +120,6 @@
 				D4357A98230548CD006E327B /* Status.swift */,
 			);
 			path = Modal;
-			sourceTree = "<group>";
-		};
-		D4357A9A2305531A006E327B /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				D4357A9B23055335006E327B /* Data+PrettyPrint.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		D4357A9F2305562A006E327B /* Managers */ = {
@@ -161,6 +152,7 @@
 		D4357AAC2305608C006E327B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D4357A9B23055335006E327B /* Data+PrettyPrint.swift */,
 				D4357AAD230560D8006E327B /* Dictionary+addObjectsFromDictionary.swift */,
 			);
 			path = Extensions;
